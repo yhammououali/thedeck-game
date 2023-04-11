@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} new game {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Create new game!</h1>
+
+            {{ form_start(form) }}
+                <div class="mb-3">
+                    {{ form_label(form.name, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.description, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': 5}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.playerOneName, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.playerOneName, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.playerTwoName, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.playerTwoName, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="d-flex flex-row-reverse">
+                    {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
